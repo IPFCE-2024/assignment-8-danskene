@@ -7,13 +7,13 @@ int main(){
     queue q; 
 
 //første test case
-initialize(q);
+initialize(&q);
 assert(empty(&q));
 
 // andre test case 
 
 int x = 5;
-enqueue(x,&q);
+enqueue(&q, x);
 int y =dequeue(&q);
 assert(x == y);
 assert(empty(&q));
@@ -21,8 +21,8 @@ assert(empty(&q));
 // tredje test case 
 
 int x1 = 5, x2 = 10;
-(x1, &q);
-enqueue(x2, &q);
+enqueue(&q, x1);
+enqueue(&q, x2);
 
 int y1 = dequeue(&q);
 int y2 = dequeue(&q);
