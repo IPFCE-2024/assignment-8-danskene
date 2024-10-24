@@ -64,11 +64,25 @@ int dequeue(queue *q)
 // Opgave 4
 void push(int element, node **head)
 {
+    node *newnode = (node *)malloc(sizeof(node));
+    assert(newnode != NULL);
+
+    newnode->data = element;
+    newnode->next = *head;
+    *head = newnode;
 }
 
 int pop(node **head)
 {
-    return -1;
+    if (*head != NULL)
+    {
+        node *temp = *head;
+        *head = (*head)->next;
+        int verdi = temp->data;
+        free(temp);
+        return verdi;
+    }
+    return -1; // error hvis det ikke er noe du kan poppe
 }
 
 void enqueueStack(queue *q, int x)
