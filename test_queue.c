@@ -32,5 +32,18 @@ assert(y2 == x2);
 assert(empty(&q));
 printf("all test passed my man\n");
 
+//test case 4
+int x3 = 5, x4 = 10;
+enqueueStack(&q, x3);
+enqueueStack(&q, x4);
+
+int y3 = dequeueStack(&q);
+int y4 = dequeueStack(&q);
+
+assert(y3 == x3);
+assert(y4 == x4);
+assert(empty(&q));
+printf("all test passed my man\n");
+
 return 0;
 }

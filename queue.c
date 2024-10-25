@@ -36,9 +36,7 @@ void enqueue(queue *q, int x)
         q->front = newnode;
         q->rear = newnode;
     }
-    else
-
-    {
+    else {
         q->rear->next = newnode;
         q->rear = newnode;
     }
@@ -87,9 +85,32 @@ int pop(node **head)
 
 void enqueueStack(queue *q, int x)
 {
+    if (empty(q))
+    {
+        push(x, &q->front);
+        q->rear = q->front;
+    }
+    else
+    {
+        push(x, &q->rear->next);
+    }
+    q->size++;
 }
-
 int dequeueStack(queue *q)
 {
-    return -1;
+  if (q->front == NULL) {
+
+        return -1; 
+    }
+
+    int value = pop(&q->front);
+
+    if (q->front == NULL) {
+        q->rear = NULL;
+    }
+
+    q->size--;
+
+    return value;
+}   return value;  
 }
