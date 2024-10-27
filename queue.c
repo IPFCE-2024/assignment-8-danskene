@@ -112,5 +112,4 @@ int dequeueStack(queue *q)
     q->size--;
 
     return value;
-}   return value;  
 }
